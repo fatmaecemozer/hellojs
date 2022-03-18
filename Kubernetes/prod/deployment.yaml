@@ -21,28 +21,10 @@ spec:
       containers:
       - name: hellojs
         image: apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: hellojs
-  namespace: prod
-spec:
-  selector:
-    matchLabels:
-      app: hellojs
-  replicas: 2
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-  template:
-    metadata:
-      labels:
-        app: hellojs
     spec:
       containers:
       - name: hellojs
-        image: ecemozer/hellojs:v27
+        image: registry.feo.local:5000/hellojs:$(Build.BuildId)v
         ports:
         - containerPort: 80
         ports:

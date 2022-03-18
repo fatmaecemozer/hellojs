@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: hellojs
-        image: ecemozer/hellojs:v27
+        image: registry.feo.local:5000/hellojs:$(Build.BuildId)v
         ports:
         - containerPort: 80
