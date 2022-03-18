@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hellojs
+  namespace: prod
+spec:
+  selector:
+    app: hellojs
+  type: NodePort
+  ports:
+  - name: http
+    port: 80
+    targetPort: 5000
+    nodePort: 30001
+    protocol: TCP
