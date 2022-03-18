@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: hellojs
-        image: ecemozer/hellojs:v$DOCKER_BUILD_NUMBER
+        image: ecemozer/hellojs:v27
         ports:
         - containerPort: 80
